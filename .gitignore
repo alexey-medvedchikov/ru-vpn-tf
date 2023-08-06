@@ -1,0 +1,6 @@
+/.terraform*
+/terraform*
+/service-account.json
+/*.ovpn
+/profile-auth.txt
+/ssh_key
