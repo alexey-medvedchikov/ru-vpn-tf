@@ -163,7 +163,10 @@ resource "local_file" "ssh_key" {
 resource "local_file" "credentials" {
   filename        = "${path.cwd}/profile-auth.txt"
   file_permission = "0600"
-  content         = "${local.vpn_user}:${random_password.vpn.result}"
+  content         = <<EOF
+${local.vpn_user}
+${random_password.vpn.result}
+EOF
 }
 
 resource "null_resource" "openvpn_profile" {

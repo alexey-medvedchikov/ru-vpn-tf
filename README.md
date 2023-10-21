@@ -20,12 +20,11 @@ ID'шки клауда и папки можно посмотреть в шапк
 export YC_CLOUD_ID=cloud_id YC_FOLDER_ID=folder_id
 terraform init
 terraform apply
-cat profile-creds.txt
-sudo openvpn profile.ovpn
+sudo openvpn --config profile.ovpn --auth-user-pass profile-auth.txt
 ```
 
 Если у тебя OpenVPN desktop клиент, или ты кулхакер и пользуешься чем-то другим, то просто скорми
-ему файл профиля. `Логин:пароль` в `profile-creds.txt`.
+ему файл профиля. Логин и пароль в `profile-creds.txt`.
 
 Настройки все захардкожены, т.ч. если хочешь что-то поменять, то `vim main.tf` и в путь.
 
